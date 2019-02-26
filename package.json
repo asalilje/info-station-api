@@ -1,0 +1,16 @@
+{
+  "name": "info-station-api",
+  "version": "0.1.0",
+  "author": "Åsa Liljegren",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "xml2js": "^0.4.19"
+  }
+}
