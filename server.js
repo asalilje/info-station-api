@@ -7,14 +7,13 @@ const moment = require("moment");
 const app = express();
 app.use(cors());
 const port = process.env.PORT || 3000;
+const sl_url = `http://api.sl.se/api2/realtimedeparturesV4.json?key=${
+  process.env.SL_KEY
+}&siteid=9184&timewindow=60`;
 
 app.get("/tube", (req, res) => {
   axios
-    .get(
-      `http://api.sl.se/api2/realtimedeparturesV4.json?key=${
-        process.env.SL_KEY
-      }&siteid=9184&timewindow=60`
-    )
+    .get(sl_url)
     .then(response => {
       if (response.data && response.data.ResponseData)
         res.send({ body: response.data.ResponseData.Metros });
